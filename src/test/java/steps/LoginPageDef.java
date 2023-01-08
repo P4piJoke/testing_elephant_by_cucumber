@@ -1,6 +1,5 @@
 package steps;
 
-import config.UserConfig;
 import io.cucumber.java.en.Then;
 import pages.LoginPage;
 
@@ -8,13 +7,18 @@ public class LoginPageDef {
 
     private final LoginPage loginPage = new LoginPage();
 
-    @Then("Input login")
-    public void inputLogin(){
-        loginPage.inputLogin(UserConfig.USER_LOGIN);
+    @Then("Input login {string}")
+    public void inputLogin(String login) {
+        loginPage.inputLogin(login);
     }
 
-    @Then("Input password")
-    public void inputPassword(){
-        loginPage.inputPassword(UserConfig.USER_PASSWORD);
+    @Then("Input password {string}")
+    public void inputPassword(String password) {
+        loginPage.inputPassword(password);
+    }
+
+    @Then("Input conformation {string}")
+    public void inputConformation(String password){
+        loginPage.inputConformation(password);
     }
 }
