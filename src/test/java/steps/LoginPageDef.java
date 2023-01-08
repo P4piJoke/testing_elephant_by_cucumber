@@ -21,4 +21,9 @@ public class LoginPageDef {
     public void inputConformation(String password){
         loginPage.inputConformation(password);
     }
+
+    @Then("Input email {string}")
+    public void inputEmail(String email) {
+        loginPage.inputEmail(email);
+    }
 }

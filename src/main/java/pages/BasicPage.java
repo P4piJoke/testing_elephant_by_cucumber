@@ -1,12 +1,15 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.switchTo;
 import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverConditions.url;
+import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 public class BasicPage {
 
@@ -46,7 +49,11 @@ public class BasicPage {
         $(By.xpath("//button[contains(string(), \"" + button + "\")]")).shouldBe(Condition.visible);
     }
 
-//    public void closeBrowser() {
-//        closeWebDriver();
-//    }
+    public void closeBrowser() {
+        closeWebDriver();
+    }
+
+    public void errorIsVisible() {
+        $(By.xpath("//div[@class='alert alert-danger alert-dismissible fade show']")).shouldBe(Condition.visible);
+    }
 }
