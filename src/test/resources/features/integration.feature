@@ -7,6 +7,7 @@ Feature: Integration testing
     Then Input password "Testtest1?"
     Then Input conformation "Testtest1?"
     Then Click "Sign up" button
+    Then close browser
     # After @Then Current url changed to "http://localhost:7000/home"@
     # throws java.io.IOException: Cannot create directory 'C: mptgwcxipd\tablespace'.
 
@@ -18,6 +19,7 @@ Feature: Integration testing
     Then Input conformation "Testtest1?"
     Then Click "Sign up" button
     Then Current url changed to "http://localhost:7000/registration"
+    Then close browser
 
   # Авторизація з коректиними даними ТС2.1
   Scenario: Login correct user
@@ -26,6 +28,7 @@ Feature: Integration testing
     Then Input password "Testtest1?"
     Then Click "Sign in" button
     Then Current url changed to "http://localhost:7000/home"
+    Then close browser
 
   # Авторизація з некоректиними даними ТС2.2
   Scenario: Login incorrect user
@@ -35,6 +38,7 @@ Feature: Integration testing
     Then Click "Sign in" button
     Then Show message "User or password not known"
     And Current url changed to "http://localhost:7000/login"
+    Then close browser
 
   # Вихід із системи ТС4.1
   Scenario: Logout from account
@@ -44,6 +48,7 @@ Feature: Integration testing
     Then Click "Sign in" button
     Then open elephant page "http://localhost:7000/profile"
     And Click "Logout" button a
+    Then close browser
 
   # Генерування нового АПІ ключа ТС 5.1
   Scenario: Generate new API key
@@ -54,6 +59,7 @@ Feature: Integration testing
     Then open elephant page "http://localhost:7000/profile"
     Then Click "Re-generate" button
     Then Show message "API keys was reset successful"
+    Then close browser
 
   # Не можемо протестувати все що пов'язане з БД бо БД не створюється
 
@@ -66,6 +72,7 @@ Feature: Integration testing
     Then open elephant page "http://localhost:7000/profile"
     And choose locale "Ukraine"
     Then button a "Вийти" visible
+    Then close browser
 
   # Обрання тієї ж мови інтерфейсу ТС14.2
   Scenario: Change locale to the same
@@ -76,6 +83,7 @@ Feature: Integration testing
     Then open elephant page "http://localhost:7000/profile"
     And choose locale "English"
     Then button a "Logout" visible
+    Then close browser
 
   # Апгрейд ролі користувача ТС16.1
   Scenario: Upgrade basic user to pro user
@@ -86,6 +94,7 @@ Feature: Integration testing
     Then open elephant page "http://localhost:7000/profile"
     Then Click "Upgrade" button
     Then button "It's your" visible
+    Then close browser
 
   # Даунгрейд ролі користувача ТС16.2
   Scenario: Downgrade to basic user
@@ -96,5 +105,6 @@ Feature: Integration testing
     Then open elephant page "http://localhost:7000/profile"
     Then Click "Upgrade" button
     Then button "It's your" visible
+    Then close browser
 
 

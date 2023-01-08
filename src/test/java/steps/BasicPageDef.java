@@ -3,6 +3,8 @@ package steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.Alert;
+import org.testng.Assert;
 import pages.BasicPage;
 
 public class BasicPageDef {
@@ -54,8 +56,13 @@ public class BasicPageDef {
         basicPage.buttonVisible(button);
     }
 
-//    @Then("close browser")
-//    public void closeBrowser() {
-//        basicPage.closeBrowser();
-//    }
+    @Then("close browser")
+    public void closeBrowser() {
+        basicPage.closeBrowser();
+    }
+
+    @Then("Error is visible")
+    public void errorIsVisible() {
+        basicPage.errorIsVisible();
+    }
 }
