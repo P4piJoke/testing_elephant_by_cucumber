@@ -9,6 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class LoginPage {
     private final SelenideElement loginInput = $(By.name("login"));
     private final SelenideElement passwordInput = $(By.name("password"));
+    private final SelenideElement conformationInput = $(By.name("conformation"));
 
     public void inputLogin(String login){
         this.loginInput.setValue(login);
@@ -16,5 +17,9 @@ public class LoginPage {
 
     public void inputPassword(String password){
         this.passwordInput.setValue(password);
+    }
+
+    public void inputConformation(String password) {
+        this.conformationInput.setValue(password);
     }
 }
